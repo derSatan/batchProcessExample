@@ -8,240 +8,140 @@
 	<MasseRequest>
 		<SatzId>1</SatzId>
 		<CDSingleRequestErzeugenEingabe>
-			<FachlicheDaten>
-				<Xml></Xml>
-			</FachlicheDaten>
+			<FachlicheDaten>Fachliche Daten</FachlicheDaten>
 			<TechnischeDaten>
-				<Absender>
 					<GesellschaftId>AKV</GesellschaftId>
-				</Absender>
-				<Dokumentdaten>
 					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname>
-				</Dokumentdaten>
-				<Steuerdaten>
 					<DoktypId>0000090001</DoktypId>
-				</Steuerdaten>
-				<Empfaenger>
 					<EmpfaengerId>01CDEF</EmpfaengerId>
 					<EmpfaengerType>KD</EmpfaengerType>
 					<EmpfaengerArt>EMPF</EmpfaengerArt>
-				</Empfaenger>
 			</TechnischeDaten>
 		</CDSingleRequestErzeugenEingabe>
 	</MasseRequest>
 	<MasseRequest>
 		<SatzId>2</SatzId>
 		<CDSingleRequestErzeugenEingabe>
-			<FachlicheDaten>
-				<Xml></Xml>
-			</FachlicheDaten>
+			<FachlicheDaten>Fachliche Daten</FachlicheDaten>
 			<TechnischeDaten>
-				<Absender>
 					<GesellschaftId>AKV</GesellschaftId>
-				</Absender>
-				<Dokumentdaten>
 					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname>
-				</Dokumentdaten>
-				<Steuerdaten>
 					<DoktypId>0000090001</DoktypId>
-				</Steuerdaten>
-				<Empfaenger>
 					<EmpfaengerId>02CDEF</EmpfaengerId>
 					<EmpfaengerType>KD</EmpfaengerType>
 					<EmpfaengerArt>EMPF</EmpfaengerArt>
-				</Empfaenger>
 			</TechnischeDaten>
 		</CDSingleRequestErzeugenEingabe>
 	</MasseRequest>
 	<MasseRequest>
 		<SatzId>3</SatzId>
 		<CDSingleRequestErzeugenEingabe>
-			<FachlicheDaten>
-				<Xml></Xml>
-			</FachlicheDaten>
+			<FachlicheDaten>Fachliche Daten</FachlicheDaten>
 			<TechnischeDaten>
-				<Absender>
 					<GesellschaftId>AKV</GesellschaftId>
-				</Absender>
-				<Dokumentdaten>
 					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname>
-				</Dokumentdaten>
-				<Steuerdaten>
 					<DoktypId>0000090001</DoktypId>
-				</Steuerdaten>
-				<Empfaenger>
 					<EmpfaengerId>03CDEF</EmpfaengerId>
 					<EmpfaengerType>KD</EmpfaengerType>
 					<EmpfaengerArt>EMPF</EmpfaengerArt>
-				</Empfaenger>
 			</TechnischeDaten>
 		</CDSingleRequestErzeugenEingabe>
 	</MasseRequest>
 	<MasseRequest>
 		<SatzId>4</SatzId>
 		<CDSingleRequestErzeugenEingabe>
-			<FachlicheDaten>
-				<Xml></Xml>
-			</FachlicheDaten>
+			<FachlicheDaten>Fachliche Daten</FachlicheDaten>
 			<TechnischeDaten>
-				<Absender>
 					<GesellschaftId>AKV</GesellschaftId>
-				</Absender>
-				<Dokumentdaten>
 					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname>
-				</Dokumentdaten>
-				<Steuerdaten>
 					<DoktypId>0000090001</DoktypId>
-				</Steuerdaten>
-				<Empfaenger>
 					<EmpfaengerId>04CDEF</EmpfaengerId>
 					<EmpfaengerType>KD</EmpfaengerType>
 					<EmpfaengerArt>EMPF</EmpfaengerArt>
-				</Empfaenger>
 			</TechnischeDaten>
 		</CDSingleRequestErzeugenEingabe>
 	</MasseRequest>
 	<MasseRequest>
 		<SatzId>5</SatzId>
 		<CDSingleRequestErzeugenEingabe>
-			<FachlicheDaten>
-				<Xml></Xml>
-			</FachlicheDaten>
+			<FachlicheDaten>Fachliche Daten</FachlicheDaten>
 			<TechnischeDaten>
-				<Absender>
 					<GesellschaftId>AKV</GesellschaftId>
-				</Absender>
-				<Dokumentdaten>
 					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname>
-				</Dokumentdaten>
-				<Steuerdaten>
 					<DoktypId>0000090001</DoktypId>
-				</Steuerdaten>
-				<Empfaenger>
 					<EmpfaengerId>05CDEF</EmpfaengerId>
 					<EmpfaengerType>KD</EmpfaengerType>
 					<EmpfaengerArt>EMPF</EmpfaengerArt>
-				</Empfaenger>
 			</TechnischeDaten>
 		</CDSingleRequestErzeugenEingabe>
 	</MasseRequest>
 	<MasseRequest>
 		<SatzId>6</SatzId>
 		<CDSingleRequestErzeugenEingabe>
-			<FachlicheDaten>
-				<Xml></Xml>
-			</FachlicheDaten>
+			<FachlicheDaten>Fachliche Daten</FachlicheDaten>
 			<TechnischeDaten>
-				<Absender>
 					<GesellschaftId>AKV</GesellschaftId>
-				</Absender>
-				<Dokumentdaten>
 					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname>
-				</Dokumentdaten>
-				<Steuerdaten>
 					<DoktypId>0000090001</DoktypId>
-				</Steuerdaten>
-				<Empfaenger>
 					<EmpfaengerId>06CDEF</EmpfaengerId>
 					<EmpfaengerType>KD</EmpfaengerType>
 					<EmpfaengerArt>EMPF</EmpfaengerArt>
-				</Empfaenger>
 			</TechnischeDaten>
 		</CDSingleRequestErzeugenEingabe>
 	</MasseRequest>
 	<MasseRequest>
 		<SatzId>7</SatzId>
 		<CDSingleRequestErzeugenEingabe>
-			<FachlicheDaten>
-				<Xml></Xml>
-			</FachlicheDaten>
+			<FachlicheDaten>Fachliche Daten</FachlicheDaten>
 			<TechnischeDaten>
-				<Absender>
 					<GesellschaftId>AKV</GesellschaftId>
-				</Absender>
-				<Dokumentdaten>
 					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname>
-				</Dokumentdaten>
-				<Steuerdaten>
 					<DoktypId>0000090001</DoktypId>
-				</Steuerdaten>
-				<Empfaenger>
 					<EmpfaengerId>07CDEF</EmpfaengerId>
 					<EmpfaengerType>KD</EmpfaengerType>
 					<EmpfaengerArt>EMPF</EmpfaengerArt>
-				</Empfaenger>
 			</TechnischeDaten>
 		</CDSingleRequestErzeugenEingabe>
 	</MasseRequest>
 	<MasseRequest>
 		<SatzId>8</SatzId>
 		<CDSingleRequestErzeugenEingabe>
-			<FachlicheDaten>
-				<Xml></Xml>
-			</FachlicheDaten>
+			<FachlicheDaten>Fachliche Daten</FachlicheDaten>
 			<TechnischeDaten>
-				<Absender>
 					<GesellschaftId>AKV</GesellschaftId>
-				</Absender>
-				<Dokumentdaten>
 					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname>
-				</Dokumentdaten>
-				<Steuerdaten>
 					<DoktypId>0000090001</DoktypId>
-				</Steuerdaten>
-				<Empfaenger>
 					<EmpfaengerId>08CDEF</EmpfaengerId>
 					<EmpfaengerType>KD</EmpfaengerType>
 					<EmpfaengerArt>EMPF</EmpfaengerArt>
-				</Empfaenger>
 			</TechnischeDaten>
 		</CDSingleRequestErzeugenEingabe>
 	</MasseRequest>
 	<MasseRequest>
 		<SatzId>9</SatzId>
 		<CDSingleRequestErzeugenEingabe>
-			<FachlicheDaten>
-				<Xml></Xml>
-			</FachlicheDaten>
+			<FachlicheDaten>Fachliche Daten</FachlicheDaten>
 			<TechnischeDaten>
-				<Absender>
 					<GesellschaftId>AKV</GesellschaftId>
-				</Absender>
-				<Dokumentdaten>
 					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname>
-				</Dokumentdaten>
-				<Steuerdaten>
 					<DoktypId>0000090001</DoktypId>
-				</Steuerdaten>
-				<Empfaenger>
 					<EmpfaengerId>09CDEF</EmpfaengerId>
 					<EmpfaengerType>KD</EmpfaengerType>
 					<EmpfaengerArt>EMPF</EmpfaengerArt>
-				</Empfaenger>
 			</TechnischeDaten>
 		</CDSingleRequestErzeugenEingabe>
 	</MasseRequest>
 	<MasseRequest>
 		<SatzId>10</SatzId>
 		<CDSingleRequestErzeugenEingabe>
-			<FachlicheDaten>
-				<Xml></Xml>
-			</FachlicheDaten>
+			<FachlicheDaten>Fachliche Daten</FachlicheDaten>
 			<TechnischeDaten>
-				<Absender>
 					<GesellschaftId>AKV</GesellschaftId>
-				</Absender>
-				<Dokumentdaten>
 					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname>
-				</Dokumentdaten>
-				<Steuerdaten>
 					<DoktypId>0000090001</DoktypId>
-				</Steuerdaten>
-				<Empfaenger>
 					<EmpfaengerId>10CDEF</EmpfaengerId>
 					<EmpfaengerType>KD</EmpfaengerType>
 					<EmpfaengerArt>EMPF</EmpfaengerArt>
-				</Empfaenger>
 			</TechnischeDaten>
 		</CDSingleRequestErzeugenEingabe>
 	</MasseRequest>
