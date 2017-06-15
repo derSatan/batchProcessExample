@@ -31,7 +31,7 @@ public class Controller {
     private SingleRequestRepository srr;
     
     @Autowired
-	private BatchRepository batchRepo;
+	private BatchRepository br;
     
     @RequestMapping("/info")
     public String info() {
@@ -39,6 +39,9 @@ public class Controller {
         return String.format(template);
     }
     
+    /*
+     * Example: http://localhost:8080/readXml?fileName=large.xml
+     */
     @RequestMapping("/readXml")
     public String readXml(@RequestParam(name="fileName")String fileName) {
     	logger.debug("Started readXml");
@@ -46,14 +49,19 @@ public class Controller {
     	try {
     		// Read file into JSON
 			JSONObject json = xr.getFileAsJson(fileName);
+			logger.debug("XML read into JSON object");
 			
 			// Get Batch from JSON and write it into mongo db
+			logger.debug("Read Batch from JSON object");
 			Batch batch = xr.getBatchFromJson(json);
-			String batchId = batchRepo.save(batch).id;
+			String batchId = br.save(batch).id;
+			logger.debug("Wrote Batch with id >" + batchId + "< into Mongo DB");
 			
 			// Get List of SingleRequests from JSON and write it into mongo db
+			logger.debug("Read all SingleRequests from JSON object");
 			List<SingleRequest> allSingleRequests = xr.getSingleRequestsFromJson(json, batchId);
-//			srr.save(allSingleRequests);
+			srr.save(allSingleRequests);
+			logger.debug("Wrote >" + allSingleRequests.size() + "< SingleRequests into Mongo DB (expected " + batch.countRequests  +")");
 			
 			// For testing purposes, we give the json back with the ID of the batch
 			result = "The new added batch with ID >" + batchId + "< looks like this:\n" + json.toString(4);
@@ -64,5 +72,17 @@ public class Controller {
 		}
     	
         return result;
+    }
+    
+    /*
+     * Example: http://localhost:8080/clearMongoDb
+     */
+    @RequestMapping("/clearMongoDb")
+    public String clearMongoDb() {
+    	logger.debug("Started clearMongoDb");
+    	br.deleteAll();
+    	srr.deleteAll();
+    	
+        return "Mongo DB cleared - everything is gone ...";
     }
 }

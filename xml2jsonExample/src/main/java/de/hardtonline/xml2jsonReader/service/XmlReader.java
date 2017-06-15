@@ -51,9 +51,20 @@ public class XmlReader {
 
 	public List<SingleRequest> getSingleRequestsFromJson(JSONObject json, String batchId) throws JSONException {
 		List<SingleRequest> allRequests = new ArrayList<SingleRequest>();
-		
+
 		JSONArray jsonArray = json.getJSONObject("CDMasseRequestErzeugenEingabe").getJSONArray("MasseRequest");
-		
+
+		for (int i = 0; i < jsonArray.length(); i++) {
+			JSONObject obj = jsonArray.getJSONObject(i);
+			SingleRequest sr = new SingleRequest();
+			sr.batchId = batchId;
+			sr.satzId = obj.getLong("SatzId");
+			sr.json = obj.getJSONObject("CDSingleRequestErzeugenEingabe");
+			sr.status = "NEW";
+			
+			allRequests.add(sr);
+		}
+
 		return allRequests;
 	}
 }

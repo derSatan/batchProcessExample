@@ -13,7 +13,7 @@ public class SingleRequest {
 	public String batchId;
 	
 	@Indexed
-	public String satzId;
+	public long satzId;
 	
 	public String status;
 	
@@ -21,7 +21,7 @@ public class SingleRequest {
 
 	public SingleRequest() {}
 	
-	public SingleRequest(String satzId, JSONObject json) {
+	public SingleRequest(long satzId, JSONObject json) {
 		this.satzId = satzId;
 		this.json = json;
 	}
