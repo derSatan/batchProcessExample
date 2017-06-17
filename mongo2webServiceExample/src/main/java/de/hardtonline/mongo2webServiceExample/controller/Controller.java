@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import de.hardtonline.mongo2webServiceExample.repository.BatchRepository;
 import de.hardtonline.mongo2webServiceExample.repository.SingleRequestRepository;
 
+// TODO: Scheduler für loops einbauen (start & pause & stop über REST realisieren)
+// TODO: KOnfigurierbaren ThreadPool aufbauen, der die DB nach Batches im Status "XY" abfragt.
+// TODO: "Harter" Stop einbauen
 @RestController
 public class Controller {
     private static final String template = "Hello, this is a simple REST service looking in a mongo db for things to do";
@@ -22,8 +25,10 @@ public class Controller {
     @Autowired
 	private BatchRepository br;
     
+    private boolean isRunning = false;
+    
     /*
-     * Example: http://localhost:8080/worker/info
+     * Example: http://localhost:10051/worker/info
      */
     @RequestMapping("/info")
     public String info() {
@@ -32,14 +37,16 @@ public class Controller {
     }
     
     /*
-     * Example: http://localhost:8080/worker/startProcess?runOnce=true
+     * Example: http://localhost:10051/worker/startProcess?runOnce=true
      */
     @RequestMapping("/startProcess")
-    public String startProcess(@RequestParam(name="runOnce")boolean onlyOnce) {
+    public String startProcess(@RequestParam(name="runOnce", required=false)boolean onlyOnce) {
     	logger.debug("Started Processing the database");
     	
     	if (onlyOnce) {
     		logger.debug("... and we run only once!");
+    	} else {
+    		isRunning = true;
     	}
     	
     	String result = "Start successful!";
@@ -48,7 +55,24 @@ public class Controller {
     }
     
     /*
-     * Example: http://localhost:8080/worker/status
+     * Example: http://localhost:10051/worker/stopProcess
+     */
+    @RequestMapping("/stopProcess")
+    public String stopProcess() {
+    	logger.debug("Stopping Processing the database");
+    	
+    	if (!isRunning) {
+    		logger.debug("Worker is already stopped!");
+    	}
+    	
+    	String result = "Stop successful!";
+    	isRunning = false;
+    	
+        return result;
+    }
+    
+    /*
+     * Example: http://localhost:10051/worker/status
      */
     @RequestMapping("/status")
     public String clearMongoDb() {
@@ -57,6 +81,14 @@ public class Controller {
     	long countBatch = br.count();
     	long countRequests = srr.count();
     	
-        return "We currently have >" + countBatch + "< Batches and >" + countRequests + "< SingleRequests in the db";
+    	StringBuilder response = new StringBuilder();
+    	response.append("We currently have >" + countBatch + "< Batches and >" + countRequests + "< SingleRequests in the db.");
+    	if (isRunning) {
+    		response.append("And the worker is running!");
+    	} else {
+    		response.append("And the worker is not running!");
+    	}
+    	
+        return response.toString();
     }
 }

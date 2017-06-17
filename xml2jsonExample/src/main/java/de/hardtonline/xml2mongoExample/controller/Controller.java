@@ -34,7 +34,7 @@ public class Controller {
 	private BatchRepository br;
     
     /*
-     * Example: http://localhost:8080/reader/info
+     * Example: http://localhost:10050/reader/info
      */
     @RequestMapping("/info")
     public String info() {
@@ -43,7 +43,7 @@ public class Controller {
     }
     
     /*
-     * Example: http://localhost:8080/reader/readXml?fileName=large.xml
+     * Example: http://localhost:10050/reader/readXml?fileName=large.xml
      */
     @RequestMapping("/readXml")
     public String readXml(@RequestParam(name="fileName")String fileName) {
@@ -78,7 +78,7 @@ public class Controller {
     }
     
     /*
-     * Example: http://localhost:8080/reader/clearMongoDb
+     * Example: http://localhost:10050/reader/clearMongoDb
      */
     @RequestMapping("/clearMongoDb")
     public String clearMongoDb() {
