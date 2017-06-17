@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>xml2jsonReader</name>
-	<description>Simple XML to JSON Reader</description>
+	<description>Simple XML reader storing simply splitted json into mongo db</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

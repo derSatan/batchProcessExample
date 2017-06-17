@@ -1,4 +1,4 @@
-package de.hardtonline.xml2jsonReader;
+package de.hardtonline.xml2mongo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

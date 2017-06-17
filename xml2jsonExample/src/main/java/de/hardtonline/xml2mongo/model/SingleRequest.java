@@ -1,4 +1,4 @@
-package de.hardtonline.xml2jsonReader.model;
+package de.hardtonline.xml2mongo.model;
 
 import org.json.JSONObject;
 import org.springframework.data.annotation.Id;

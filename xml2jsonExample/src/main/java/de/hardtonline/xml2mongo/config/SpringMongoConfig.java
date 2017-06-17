@@ -1,4 +1,4 @@
-package de.hardtonline.xml2jsonReader.config;
+package de.hardtonline.xml2mongo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

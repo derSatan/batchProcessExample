@@ -1,4 +1,4 @@
-package de.hardtonline.xml2jsonReader.controller;
+package de.hardtonline.xml2mongo.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.hardtonline.xml2jsonReader.model.Batch;
-import de.hardtonline.xml2jsonReader.model.SingleRequest;
-import de.hardtonline.xml2jsonReader.repository.BatchRepository;
-import de.hardtonline.xml2jsonReader.repository.SingleRequestRepository;
-import de.hardtonline.xml2jsonReader.service.XmlReader;
+import de.hardtonline.xml2mongo.model.Batch;
+import de.hardtonline.xml2mongo.model.SingleRequest;
+import de.hardtonline.xml2mongo.repository.BatchRepository;
+import de.hardtonline.xml2mongo.repository.SingleRequestRepository;
+import de.hardtonline.xml2mongo.service.XmlReader;
 
 @RestController
 public class Controller {
