@@ -1,10 +1,10 @@
-package de.hardtonline.xml2mongo.repository;
+package de.hardtonline.xml2mongoExample.repository;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import de.hardtonline.xml2mongo.model.Batch;
+import de.hardtonline.xml2mongoExample.model.Batch;
 
 public interface BatchRepository extends MongoRepository<Batch, String> {
 

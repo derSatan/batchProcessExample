@@ -1,4 +1,4 @@
-package de.hardtonline.xml2mongo.controller;
+package de.hardtonline.xml2mongoExample.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.hardtonline.xml2mongo.model.Batch;
-import de.hardtonline.xml2mongo.model.SingleRequest;
-import de.hardtonline.xml2mongo.repository.BatchRepository;
-import de.hardtonline.xml2mongo.repository.SingleRequestRepository;
-import de.hardtonline.xml2mongo.service.XmlReader;
+import de.hardtonline.xml2mongoExample.model.Batch;
+import de.hardtonline.xml2mongoExample.model.SingleRequest;
+import de.hardtonline.xml2mongoExample.repository.BatchRepository;
+import de.hardtonline.xml2mongoExample.repository.SingleRequestRepository;
+import de.hardtonline.xml2mongoExample.service.XmlReader;
 
 @RestController
 public class Controller {

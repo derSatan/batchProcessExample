@@ -1,4 +1,4 @@
-package de.hardtonline.xml2mongo;
+package de.hardtonline.xml2mongoExample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
