@@ -33,6 +33,9 @@ public class Controller {
     @Autowired
 	private BatchRepository br;
     
+    /*
+     * Example: http://localhost:8080/reader/info
+     */
     @RequestMapping("/info")
     public String info() {
     	logger.debug("Started info");
@@ -40,7 +43,7 @@ public class Controller {
     }
     
     /*
-     * Example: http://localhost:8080/readXml?fileName=large.xml
+     * Example: http://localhost:8080/reader/readXml?fileName=large.xml
      */
     @RequestMapping("/readXml")
     public String readXml(@RequestParam(name="fileName")String fileName) {
@@ -75,7 +78,7 @@ public class Controller {
     }
     
     /*
-     * Example: http://localhost:8080/clearMongoDb
+     * Example: http://localhost:8080/reader/clearMongoDb
      */
     @RequestMapping("/clearMongoDb")
     public String clearMongoDb() {
