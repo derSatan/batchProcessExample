@@ -1,5 +1,6 @@
 package de.hardtonline.worker1.controller;
 
+import org.quartz.SchedulerException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import de.hardtonline.worker1.repository.BatchRepository;
 import de.hardtonline.worker1.repository.SingleRequestRepository;
+import de.hardtonline.worker1.service.WorkerService;
 
 // TODO: Scheduler für loops einbauen (start & pause & stop über REST realisieren)
 // TODO: KOnfigurierbaren ThreadPool aufbauen, der die DB nach Batches im Status "XY" abfragt.
@@ -20,12 +22,13 @@ public class Controller {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     
     @Autowired
+    private WorkerService ws;
+    
+    @Autowired
     private SingleRequestRepository srr;
     
     @Autowired
 	private BatchRepository br;
-    
-    private boolean isRunning = false;
     
     /*
      * Example: http://localhost:10051/worker1/info
@@ -43,16 +46,19 @@ public class Controller {
     public String startProcess(@RequestParam(name="runOnce", required=false)boolean onlyOnce) {
     	logger.debug("Started Processing the database");
     	String result = "";
-    	
-    	if (onlyOnce) {
-    		logger.debug("... and we run only once!");
-    		result = "Started only once!";
-    	} else {
-    		isRunning = true;
-    		result = "Start successful!";
-    	}
-    	
-    	
+		try {
+			if (onlyOnce) {
+				ws.startWorkerOnce();
+				logger.debug("... and we run only once!");
+				result = "Started only once!";
+			} else {
+				ws.startWorker();
+				result = "Start successful!";
+			}
+		} catch (SchedulerException e) {
+			result = "START ERROR!";
+			e.printStackTrace();
+		}
     	
         return result;
     }
@@ -63,14 +69,21 @@ public class Controller {
     @RequestMapping("/stopProcess")
     public String stopProcess() {
     	logger.debug("Stopping processing the database");
+    	String result = "";
+    	try {
+    		if (ws.isRunning()) {
+    			ws.stopWorker();
+    		} else {
+    			logger.debug("Worker is already stopped!");
+    		}
     	
-    	if (!isRunning) {
-    		logger.debug("Worker is already stopped!");
-    	}
-    	
-    	String result = "Stop successful!";
-    	isRunning = false;
-    	
+    		result = "Stop successful!";
+		} catch (SchedulerException e) {
+			result = "START ERROR!";
+			e.printStackTrace();
+		} finally {
+			result = "Stop successful!";
+		}
         return result;
     }
     
@@ -85,13 +98,18 @@ public class Controller {
     	long countRequests = srr.count();
     	
     	StringBuilder response = new StringBuilder();
-    	response.append("We currently have >" + countBatch + "< Batches and >" + countRequests + "< SingleRequests in the db. ");
-    	if (isRunning) {
-    		response.append("And the worker is running!");
-    	} else {
-    		response.append("And the worker is not running!");
-    	}
+    	try {
+    		response.append("We currently have >" + countBatch + "< Batches and >" + countRequests + "< SingleRequests in the db. ");
     	
+    		if (ws.isRunning()) {
+    			response.append("And the worker is running!");
+    		} else {
+    			response.append("And the worker is not running!");
+    		}
+		} catch (SchedulerException e) {
+			response.append("And we have a problem with the worker!");
+			e.printStackTrace();
+		}
         return response.toString();
     }
 }

@@ -3,10 +3,12 @@ package de.hardtonline.worker1.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.mongodb.MongoClient;
 
 @Configuration
+@EnableScheduling
 public class SpringMongoConfig {
 	public @Bean
 	MongoTemplate mongoTemplate() throws Exception {
