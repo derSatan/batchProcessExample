@@ -14,6 +14,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import de.hardtonline.worker1.job.WorkBatch;
+import de.hardtonline.worker1.repository.BatchRepository;
+import de.hardtonline.worker1.repository.SingleRequestRepository;
 
 @Service
 public class WorkerService {
@@ -21,7 +23,7 @@ public class WorkerService {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	private Scheduler scheduler;
 	private JobKey jobKey;
-	
+    		
 	public WorkerService() {
 		try {
 			scheduler = new StdSchedulerFactory().getScheduler();
@@ -33,41 +35,51 @@ public class WorkerService {
 		
 	}
 	
-	public void startWorker() throws SchedulerException {
+	public void startWorker(int intervall) throws SchedulerException {
+		
+		// Create Job
 		JobDetail job = JobBuilder.newJob(WorkBatch.class)
 				.withIdentity("workBatch", "group1").build();
 		
+		// Create Trigger
 		Trigger trigger = TriggerBuilder
 				.newTrigger()
 				.withIdentity("triggerWorkBatch", "group1")
 				.withSchedule(
 				    SimpleScheduleBuilder.simpleSchedule()
-					.withIntervalInSeconds(5).repeatForever())
+					.withIntervalInSeconds(intervall).repeatForever())
 				.build();
 		
+		// Save JobKey and schedule job
 		jobKey = job.getKey();
 		scheduler.scheduleJob(job, trigger);
+		
 		logger.debug("Job " + jobKey.toString() + " started!");
 	}
 	
-	public void stopWorker() throws SchedulerException {
-		scheduler.deleteJob(jobKey);
-		logger.debug("Job " + jobKey.toString() + " deleted!");
-	}
-
 	public void startWorkerOnce() throws SchedulerException {
+		
+		// Create Job
 		JobDetail job = JobBuilder.newJob(WorkBatch.class)
 				.withIdentity("workBatch", "group1").build();
 		
+		// Create Trigger (with repeatCount 0 - run just once)
 		Trigger trigger = TriggerBuilder
 				.newTrigger()
 				.withIdentity("triggerWorkBatch", "group1")
 				.withSchedule(SimpleScheduleBuilder.simpleSchedule().withRepeatCount(0))
 				.build();
 		
+		// Save JobKey and schedule job
 		jobKey = job.getKey();
 		scheduler.scheduleJob(job, trigger);
+
 		logger.debug("Job " + jobKey.toString() + " started once!");
+	}
+	
+	public void stopWorker() throws SchedulerException {
+		scheduler.deleteJob(jobKey);
+		logger.debug("Job " + jobKey.toString() + " deleted!");
 	}
 	
 	public boolean isRunning() throws SchedulerException {

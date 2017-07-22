@@ -12,9 +12,6 @@ import de.hardtonline.worker1.repository.BatchRepository;
 import de.hardtonline.worker1.repository.SingleRequestRepository;
 import de.hardtonline.worker1.service.WorkerService;
 
-// TODO: Scheduler für loops einbauen (start & pause & stop über REST realisieren)
-// TODO: KOnfigurierbaren ThreadPool aufbauen, der die DB nach Batches im Status "XY" abfragt.
-// TODO: "Harter" Stop einbauen
 @RestController
 public class Controller {
     private static final String template = "Hello, this is a simple REST service looking in a mongo db for things to do";
@@ -52,7 +49,7 @@ public class Controller {
 				logger.debug("... and we run only once!");
 				result = "Started only once!";
 			} else {
-				ws.startWorker();
+				ws.startWorker(30); // TODO: Move interval to config
 				result = "Start successful!";
 			}
 		} catch (SchedulerException e) {
