@@ -13,9 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import de.hardtonline.worker1.job.WorkBatch;
-import de.hardtonline.worker1.repository.BatchRepository;
-import de.hardtonline.worker1.repository.SingleRequestRepository;
+import de.hardtonline.worker1.scheduler.WorkBatch;
 
 @Service
 public class WorkerService {
