@@ -1,4 +1,4 @@
-package de.hardtonline.xml2mongoExample.config;
+package de.hardtonline.xmlDispatcher.config;
 
 import org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;

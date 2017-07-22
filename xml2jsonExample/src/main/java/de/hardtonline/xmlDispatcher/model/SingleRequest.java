@@ -1,4 +1,4 @@
-package de.hardtonline.xml2mongoExample.model;
+package de.hardtonline.xmlDispatcher.model;
 
 import org.json.JSONObject;
 import org.springframework.data.annotation.Id;

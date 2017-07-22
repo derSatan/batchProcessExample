@@ -1,4 +1,4 @@
-package de.hardtonline.xml2mongoExample.service;
+package de.hardtonline.xmlDispatcher.service;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,8 +15,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import de.hardtonline.xml2mongoExample.model.Batch;
-import de.hardtonline.xml2mongoExample.model.SingleRequest;
+import de.hardtonline.xmlDispatcher.model.Batch;
+import de.hardtonline.xmlDispatcher.model.SingleRequest;
 
 @Service
 public class XmlReader {

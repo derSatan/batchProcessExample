@@ -1,4 +1,4 @@
-package de.hardtonline.xml2mongoExample.model;
+package de.hardtonline.xmlDispatcher.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;

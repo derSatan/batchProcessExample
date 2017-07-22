@@ -1,4 +1,4 @@
-package de.hardtonline.xml2mongoExample;
+package de.hardtonline.xmlDispatcher;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

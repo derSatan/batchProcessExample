@@ -1,4 +1,4 @@
-package de.hardtonline.xml2mongoExample.config;
+package de.hardtonline.xmlDispatcher.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
