@@ -1,4 +1,4 @@
-package de.hardtonline.mongo2webServiceExample.model;
+package de.hardtonline.worker1.model;
 
 import org.json.JSONObject;
 import org.springframework.data.annotation.Id;

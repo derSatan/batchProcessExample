@@ -1,4 +1,4 @@
-package de.hardtonline.mongo2webServiceExample.config;
+package de.hardtonline.worker1.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

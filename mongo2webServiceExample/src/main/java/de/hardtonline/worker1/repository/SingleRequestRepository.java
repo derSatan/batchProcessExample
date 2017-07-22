@@ -1,10 +1,10 @@
-package de.hardtonline.mongo2webServiceExample.repository;
+package de.hardtonline.worker1.repository;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import de.hardtonline.mongo2webServiceExample.model.SingleRequest;
+import de.hardtonline.worker1.model.SingleRequest;
 
 public interface SingleRequestRepository extends MongoRepository<SingleRequest, String> {
     public SingleRequest findById(String id);

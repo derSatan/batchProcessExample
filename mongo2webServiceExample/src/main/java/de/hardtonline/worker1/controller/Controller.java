@@ -1,4 +1,4 @@
-package de.hardtonline.mongo2webServiceExample.controller;
+package de.hardtonline.worker1.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.hardtonline.mongo2webServiceExample.repository.BatchRepository;
-import de.hardtonline.mongo2webServiceExample.repository.SingleRequestRepository;
+import de.hardtonline.worker1.repository.BatchRepository;
+import de.hardtonline.worker1.repository.SingleRequestRepository;
 
 // TODO: Scheduler für loops einbauen (start & pause & stop über REST realisieren)
 // TODO: KOnfigurierbaren ThreadPool aufbauen, der die DB nach Batches im Status "XY" abfragt.
