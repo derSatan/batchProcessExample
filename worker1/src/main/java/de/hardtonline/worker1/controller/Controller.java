@@ -28,7 +28,7 @@ public class Controller {
     private boolean isRunning = false;
     
     /*
-     * Example: http://localhost:10051/worker/info
+     * Example: http://localhost:10051/worker1/info
      */
     @RequestMapping("/info")
     public String info() {
@@ -37,29 +37,32 @@ public class Controller {
     }
     
     /*
-     * Example: http://localhost:10051/worker/startProcess?runOnce=true
+     * Example: http://localhost:10051/worker1/startProcess?runOnce=true
      */
     @RequestMapping("/startProcess")
     public String startProcess(@RequestParam(name="runOnce", required=false)boolean onlyOnce) {
     	logger.debug("Started Processing the database");
+    	String result = "";
     	
     	if (onlyOnce) {
     		logger.debug("... and we run only once!");
+    		result = "Started only once!";
     	} else {
     		isRunning = true;
+    		result = "Start successful!";
     	}
     	
-    	String result = "Start successful!";
+    	
     	
         return result;
     }
     
     /*
-     * Example: http://localhost:10051/worker/stopProcess
+     * Example: http://localhost:10051/worker1/stopProcess
      */
     @RequestMapping("/stopProcess")
     public String stopProcess() {
-    	logger.debug("Stopping Processing the database");
+    	logger.debug("Stopping processing the database");
     	
     	if (!isRunning) {
     		logger.debug("Worker is already stopped!");
@@ -72,7 +75,7 @@ public class Controller {
     }
     
     /*
-     * Example: http://localhost:10051/worker/status
+     * Example: http://localhost:10051/worker1/status
      */
     @RequestMapping("/status")
     public String clearMongoDb() {
@@ -82,7 +85,7 @@ public class Controller {
     	long countRequests = srr.count();
     	
     	StringBuilder response = new StringBuilder();
-    	response.append("We currently have >" + countBatch + "< Batches and >" + countRequests + "< SingleRequests in the db.");
+    	response.append("We currently have >" + countBatch + "< Batches and >" + countRequests + "< SingleRequests in the db. ");
     	if (isRunning) {
     		response.append("And the worker is running!");
     	} else {

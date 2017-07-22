@@ -1,4 +1,3 @@
-# xml2mongoExample
+# worker1
 
-This is a simple RESTful service which receives a xml file and stores it into a mongo db.
-While doing this, the xml is transferred into a JSON. The JSON is then structurally splitted and stored in seperated Collections.
+This is a simple worker service which can be started via simple REST calls.

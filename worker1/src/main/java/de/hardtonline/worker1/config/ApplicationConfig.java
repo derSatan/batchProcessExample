@@ -25,7 +25,7 @@ public class ApplicationConfig {
     @Bean
     public ServletRegistrationBean dispatcherServletRegistration() {
         ServletRegistrationBean registration = new ServletRegistrationBean(
-                dispatcherServlet(), "/worker/*");
+                dispatcherServlet(), "/worker1/*");
         registration.setName(DispatcherServletAutoConfiguration.DEFAULT_DISPATCHER_SERVLET_REGISTRATION_BEAN_NAME);
         return registration;
     }

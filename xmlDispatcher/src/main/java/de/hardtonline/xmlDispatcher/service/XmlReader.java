@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import de.hardtonline.xmlDispatcher.model.Batch;
+import de.hardtonline.xmlDispatcher.model.BatchStatus;
 import de.hardtonline.xmlDispatcher.model.SingleRequest;
 
 @Service
@@ -45,6 +46,7 @@ public class XmlReader {
 		batch.consumer = masseDetail.getString("Konsument");
 		batch.countRequests = masseDetail.getLong("AnzahlSaetze");
 		batch.description = masseDetail.getString("Beschreibung");
+		batch.batchStatus = BatchStatus.READY;
 
 		return batch;
 	}
