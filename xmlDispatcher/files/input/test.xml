@@ -2,7 +2,7 @@
 <CDMasseRequestErzeugenEingabe>
 	<MasseDetail>
 		<Beschreibung>Small Test with one Request</Beschreibung>
-		<AnzahlSaetze>1</AnzahlSaetze>
+		<AnzahlSaetze>2</AnzahlSaetze>
 		<Konsument>Jens</Konsument>
 	</MasseDetail>
 	<MasseRequest>
@@ -33,22 +33,22 @@
 			</TechnischeDaten>
 		</CDSingleRequestErzeugenEingabe>
 	</MasseRequest>
-<!-- 	<MasseRequest> -->
-<!-- 		<SatzId>2</SatzId> -->
-<!-- 		<CDSingleRequestErzeugenEingabe> -->
-<!-- 			<FachlicheDaten>Fachliche Daten Satz 2</FachlicheDaten> -->
-<!-- 			<TechnischeDaten> -->
-<!-- 				<GesellschaftId>AKV</GesellschaftId> -->
-<!-- 				<Dokument> -->
-<!-- 					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname> -->
-<!-- 					<DoktypId>0000090001</DoktypId> -->
-<!-- 				</Dokument> -->
-<!-- 				<Empfaenger> -->
-<!-- 					<EmpfaengerId>02CDEF</EmpfaengerId> -->
-<!-- 					<EmpfaengerType>KD</EmpfaengerType> -->
-<!-- 					<EmpfaengerArt>EMPF</EmpfaengerArt> -->
-<!-- 				</Empfaenger> -->
-<!-- 			</TechnischeDaten> -->
-<!-- 		</CDSingleRequestErzeugenEingabe> -->
-<!-- 	</MasseRequest> -->
+	<MasseRequest>
+		<SatzId>2</SatzId>
+		<CDSingleRequestErzeugenEingabe>
+			<FachlicheDaten>Fachliche Daten Satz 2</FachlicheDaten>
+			<TechnischeDaten>
+				<GesellschaftId>AKV</GesellschaftId>
+				<Dokument>
+					<Dokumentname>ADE_ZZZZ_ECMCD_TEST1</Dokumentname>
+					<DoktypId>0000090001</DoktypId>
+				</Dokument>
+				<Empfaenger>
+					<EmpfaengerId>02CDEF</EmpfaengerId>
+					<EmpfaengerType>KD</EmpfaengerType>
+					<EmpfaengerArt>EMPF</EmpfaengerArt>
+				</Empfaenger>
+			</TechnischeDaten>
+		</CDSingleRequestErzeugenEingabe>
+	</MasseRequest>
 </CDMasseRequestErzeugenEingabe>
